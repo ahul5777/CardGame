@@ -1,0 +1,64 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+<aura:attribute name="SelectedMode" type="String" access="public" ></aura:attribute>
+
+<aura:attribute name="options" type="List" access="Private" default="[
+{'label':'NewBie','value':'NewBie'},
+{'label':'Intermediate','value':'Intermediate'},
+{'label':'Master','value':'Master'}
+
+]"></aura:attribute>
+
+    <lightning:card footer="Hello Wrld Footer" title="Hello World Title">
+
+        <p class="slds-p-horizontal_small">
+            
+        </p>
+       <lightning:layout horizontalAlign="center">
+      
+
+        <lightning:layoutItem  padding="around-small">
+        Add level Details:
+         </lightning:layoutItem>
+
+         <lightning:layoutItem  padding="around-small">
+        <lightning:combobox name="progress" variant="label-hidden" aura:id="gameMode" 
+          placeholder="Select " options="{! v.options }" />
+         </lightning:layoutItem> 
+
+        </lightning:layout>
+        
+        <div align="center">
+        <lightning:button variant="brand" label="Done"  onclick="{!c.Done}"/>
+        <lightning:button  label="FineWork"  onclick="{!c.FineWork}"/>
+        </div>
+
+        <div align="center">
+        Selected Mode Is: {!v.SelectedMode}
+        
+        </div>  
+        <aura:if isTrue="{! (v.SelectedMode != null)}">
+            <c:BoardPanel aura:id="boardComp" mode="{!v.SelectedMode}"></c:BoardPanel>
+            <aura:set attribute="else">Else Part</aura:set>
+        </aura:if>      
+
+    </lightning:card>
+        
+
+    
+
+
+       
+
+      
+          
+           
+    
+
+
+     
+
+
+</aura:component>	
+
+
