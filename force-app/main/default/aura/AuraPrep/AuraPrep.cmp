@@ -9,7 +9,7 @@
 
 ]"></aura:attribute>
 
-    <lightning:card footer="Hello World Footer" title="Hello World Title">
+    <lightning:card footer="Hello Wrld Footer" title="Hello World Title">
 
         <p class="slds-p-horizontal_small">
             
@@ -30,7 +30,7 @@
         
         <div align="center">
         <lightning:button variant="brand" label="Done"  onclick="{!c.Done}"/>
-        <lightning:button variant="brand" label="FineWork"  onclick="{!c.FineWork}"/>
+        <lightning:button  label="FineWork"  onclick="{!c.FineWork}"/>
         </div>
 
         <div align="center">
